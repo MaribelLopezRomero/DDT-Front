@@ -1,0 +1,53 @@
+body{
+    height: 100vh;
+    background-color: #19A7CE;
+  
+}
+
+.btn{
+
+    background-color: #19A7CE;
+
+}
+
+.menuBtn{
+
+    background-color: #F6F1F1;
+
+}
+
+.menuBtn:hover{
+
+    background-color: lightgray;
+
+}
+.div-img{
+    height: 20vh;
+}
+.logo{
+    height: 100%;
+}
+.card-container{
+    height: 50vh;
+}
+.card, .form-control{
+    background-color: #F6F1F1;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+/* .section{
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly
+} */

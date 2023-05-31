@@ -1,0 +1,95 @@
+<header>
+    <div class="text-center d-flex flex-row justify-content-start" style="background-color: #19A7CE; height: 15vh;">
+        <img class="img-fluid" src="../../../assets/images/DDT_LOGO.png" alt="">
+    </div>
+    <div class="d-flex flex-row justify-content-between align-items-center" style="background-color: #146C94;">
+        <div class="container col-6 d-flex justify-content-start align-items-center flex-row">
+            <h3 class="text-white mt-2">Ventana del producto</h3>
+            <a class="btn m-1 btn-light col-lg-2" routerLink="/menu" role="button"><i class="bi bi-backspace-fill"></i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-backspace-fill" viewBox="0 0 16 16">
+                <path d="M15.683 3a2 2 0 0 0-2-2h-7.08a2 2 0 0 0-1.519.698L.241 7.35a1 1 0 0 0 0 1.302l4.843 5.65A2 2 0 0 0 6.603 15h7.08a2 2 0 0 0 2-2V3zM5.829 5.854a.5.5 0 1 1 .707-.708l2.147 2.147 2.146-2.147a.5.5 0 1 1 .707.708L9.39 8l2.146 2.146a.5.5 0 0 1-.707.708L8.683 8.707l-2.147 2.147a.5.5 0 0 1-.707-.708L7.976 8 5.829 5.854z"/>
+              </svg></a>
+        </div>
+        <div class="container col-6 d-flex flex-lg-row flex-md-row flex-column align-items-center justify-content-end">
+            <a class="btn m-1 btn-light col-lg-2" (click)="logOff()" role="button"><i class="bi bi-box-arrow-left"></i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
+              <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+            </svg></a>
+            <a class="btn m-1 btn-light col-lg-2" (click)="goLogin()" role="button"><i class="bi bi-person-fill"></i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+              </svg></a>
+              <a class="btn m-1 btn-light col-lg-2" data-bs-toggle="modal" data-bs-target="#exampleModal" role="button"><i class="bi bi-cart-fill"></i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+              </svg>{{ this.numProductosCart() }}</a>
+        </div>
+    </div>
+</header>
+<section class="py-5">
+  <div *ngIf="product != null || product != undefined" class="container">
+    <div class="row gx-5">
+      <aside class="col-lg-6">
+        <div class="border rounded-4 mb-3 d-flex justify-content-center">
+          <a data-fslightbox="mygalley" class="rounded-4" target="_blank" data-type="image" href="https://play-lh.googleusercontent.com/_tslXR7zUXgzpiZI9t70ywHqWAxwMi8LLSfx8Ab4Mq4NUTHMjFNxVMwTM1G0Q-XNU80">
+            <img style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit" src="https://play-lh.googleusercontent.com/_tslXR7zUXgzpiZI9t70ywHqWAxwMi8LLSfx8Ab4Mq4NUTHMjFNxVMwTM1G0Q-XNU80" />
+          </a>
+        </div>
+      </aside>
+      <main class="col-lg-6">
+        <div class="ps-lg-3">
+          <h4 class="title text-dark">
+            {{ product.getTitle() }}
+          </h4>
+          <hr>
+          <div class="mb-3">
+            <span class="h5">{{ product.getPrice() }}€</span>
+            <span class="text-muted">/por unidad</span>
+          </div>
+
+          <p><span>Sinopsis:<br></span>{{ product.getSinopsis()}}</p>
+
+          <div class="row">
+            <dt class="col-3">ISBN:</dt>
+            <dd class="col-9">{{ product.getIsbn() }}</dd>
+
+            <dt class="col-3">Disponible:</dt>
+            <dd *ngIf="this.product.getAvailable() == true" class="col-9 text-success">Si</dd>
+            <dd *ngIf="this.product.getAvailable() == false" class="col-9 text-danger">No</dd>
+          </div>
+
+          <hr />
+          <a class="btn btn-primary shadow-0 m-1" (click)="addToCart()">Añadir al carrito</a>
+          <a class="btn btn-light border border-secondary py-2 icon-hover px-3 m-1">Añadir a favoritos</a>
+        </div>
+      </main>
+    </div>
+  </div>
+</section>
+<footer class="text-center text-lg-start text-muted mt-3 d-flex align-items-center" style="background-color: #146C94; height: 20vh;">
+    <img class="img-fluid h-75" src="../../../assets/images/DDT_LOGO.png" alt="">
+</footer>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Tu cesta</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="show-cart col-11 table-bordered border-dark">
+            <tr *ngFor="let book of cart!" class="col-12">
+              <td class="col-5 text-center">{{ book.getTitle() }}</td>
+              <td class="col-5 text-center">Precio: {{ book.getPrice() }}€</td>
+              <td class="col-2"><button class="btn btn-danger"><i class="bi bi-trash-fill"></i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+              </svg></button></td>
+            </tr>
+          </table>
+          <div>Precio de la cesta: {{ this.getCartPrice() }} $<span class="total-cart"></span></div>
+        </div>
+        <div class="modal-footer d-flex justify-content-between">
+          <button type="button" class="btn btn-danger" (click)="this.clearCart()">VACIAR CESTA</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="this.goPayment()">PAGAR</button>
+        </div>
+      </div>
+    </div>
+</div>
